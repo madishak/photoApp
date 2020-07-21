@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
-import { uniqueId } from 'lodash';
-import { addPhotos, removePhoto } from './actions/index';
+import { connect } from "react-redux";
+import { uniqueId } from "lodash";
+import { addPhotos, removePhoto } from "./actions/index";
 
-const mapStateToProps = state => {
-  console.log('State', state.photos)
+const mapStateToProps = (state) => {
+  console.log("State", state.photos);
   return {
     photos: state.photos,
-  }
-}
+  };
+};
 
 class App extends Component {
   constructor(props) {
@@ -19,9 +19,9 @@ class App extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const { dispatch } = this.props;
-    const files = Object.values(this.fileInput.current.files).map((file, ind) =>
-        ({ id: uniqueId(), file: URL.createObjectURL(file) })
-    );
+    const files = Object.values(
+      this.fileInput.current.files
+    ).map((file, ind) => ({ id: uniqueId(), file: URL.createObjectURL(file) }));
     dispatch(addPhotos(files));
     console.log("Files", files);
   };
@@ -44,11 +44,9 @@ class App extends Component {
             OK
           </button>
         </form>
-        {
-
-          photos.length ?
-                photos.map(({ id, file }) => this.createImg(id, file)) : null
-        }
+        {photos.length
+          ? photos.map(({ id, file }) => this.createImg(id, file))
+          : null}
       </div>
     );
   }
