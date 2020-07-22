@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { uniqueId } from "lodash";
 import { addPhotos, removePhoto } from "./actions/index";
+import 'roboto-fontface/css/roboto/roboto-fontface.css'
 
 const mapStateToProps = (state) => {
   console.log("State", state.photos);
