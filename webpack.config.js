@@ -15,7 +15,11 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: "Madina Karachai - PhotoApp",
-      link: { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" },
+      link: {
+        rel: "stylesheet",
+        href:
+          "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap",
+      },
       favicon: "photo.ico",
       template: path.resolve(__dirname, "components/index.html"),
     }),
@@ -35,8 +39,8 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-    use: ['file-loader'],
-         },
+        use: ["file-loader"],
+      },
       {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
