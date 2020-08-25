@@ -4,13 +4,12 @@ const photos = (state = [], action) => {
   switch (action.type) {
     case "ADD_PHOTOS": {
       const { photos } = action;
-      // return { photos, ...state }
       console.log(photos);
-      return [...photos];
+      return [...photos, ...state];
     }
     case "REMOVE_PHOTO": {
       const { id } = action;
-      return state.filter((photo, ind) => ind !== id);
+      return state.filter((photo) => photo.id !== id);
     }
     default:
       return state;
