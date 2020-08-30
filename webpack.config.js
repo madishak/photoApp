@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    app: "./components/index.js",
+    app: "./index.js",
   },
   devtool: "inline-source-map",
   devServer: {
@@ -21,7 +21,7 @@ module.exports = {
           "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap",
       },
       favicon: "photo.ico",
-      template: path.resolve(__dirname, "components/index.html"),
+      template: path.resolve(__dirname, "./index.html"),
     }),
   ],
   output: {
