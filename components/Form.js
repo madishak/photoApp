@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { connect } from "react-redux";
 import { uniqueId } from "lodash";
 import { makeStyles } from "@material-ui/core/styles";
-import { addPhotos } from "./actions/index";
+import { addPhotos } from "../containers/actions/index";
 import { Button } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
@@ -25,10 +25,13 @@ const Form = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { dispatch } = props;
+
     const files = Object.values(fileInput.current.files).map((file) => ({
       id: uniqueId(),
+      name: file.name.slice(0,10).split(".")[0],
       file: URL.createObjectURL(file),
     }));
+    console.log("files", files);
     dispatch(addPhotos(files));
   };
 

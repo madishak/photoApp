@@ -9,7 +9,7 @@ import IconButton from "@material-ui/core/IconButton";
 import { red } from "@material-ui/core/colors";
 import { Grid } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
-import { removePhoto } from "./actions/index";
+import { removePhoto } from "../containers/actions/index";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -51,10 +51,10 @@ const PhotoCard = (props) => {
     const { dispatch } = props;
     dispatch(removePhoto(id));
   };
-
+  
   return photos.length
-    ? photos.map(({ id, file }) => (
-        <Grid item xs={12} sm={4} key={id}>
+    ? photos.map(({ id, name, file }) => (
+        <Grid item xs={10} sm={4} key={id}>
           <Card className={classes.root}>
             <CardHeader
               action={
@@ -65,7 +65,7 @@ const PhotoCard = (props) => {
                   <DeleteIcon />
                 </IconButton>
               }
-              title="Shrimp and Chorizo Paella"
+              title={name}
             />
             <CardMedia className={classes.media} image={file} title="pic" />
           </Card>
