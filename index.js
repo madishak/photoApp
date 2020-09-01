@@ -3,9 +3,9 @@ import { render } from "react-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
 import createSagaMidleware from "redux-saga";
-import rootSaga from "./components/sagas/index";
+import rootSaga from "./containers/sagas/index";
 import "roboto-fontface/css/roboto/roboto-fontface.css";
-import photos from "./components/reducers/index.js";
+import photos from "./containers/reducers/index.js";
 import App from "./components/App";
 import './style.css';
 
