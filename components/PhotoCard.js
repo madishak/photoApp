@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
     marginTop: 25,
+    cursor: "pointer",
   },
   media: {
     height: 0,
@@ -43,11 +44,13 @@ const mapStateToProps = (state) => {
 };
 
 const PhotoCard = (props) => {
+  const { history } = props;
+  console.log(history);
   const classes = useStyles();
   const { photos } = props;
 
   const handleRemoveCard = (id) => {
-    console.log(props);
+    // console.log(props);
     const { dispatch } = props;
     dispatch(removePhoto(id));
   };
@@ -55,7 +58,7 @@ const PhotoCard = (props) => {
   return photos.length
     ? photos.map(({ id, name, file }) => (
         <Grid item xs={10} sm={4} key={id}>
-          <Card className={classes.root}>
+          <Card className={classes.root} onClick={() => history.push(`/${id}`)}>
             <CardHeader
               action={
                 <IconButton
