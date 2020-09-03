@@ -10,7 +10,7 @@ import IconButton from "@material-ui/core/IconButton";
 import { red } from "@material-ui/core/colors";
 import { Grid } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
-import { removePhoto } from "../containers/actions/index";
+import { getPhotoId, removePhoto } from "../containers/actions/index";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,17 +46,20 @@ const mapStateToProps = (state) => {
 
 const PhotoCard = (props) => {
   const history = useHistory();
-  console.log(history);
   const classes = useStyles();
   const { photos } = props;
 
   const handleRemoveCard = (id) => {
-    // console.log(props);
     const { dispatch } = props;
     dispatch(removePhoto(id));
   };
 
-  const handlePage = (id) => () => history.push(`/${id}`)
+  const handlePage = (id) => () => {
+    console.log('card', typeof id)
+    const { dispatch } = props;
+    dispatch(getPhotoId(id));
+    history.push(`/${id}`)
+  }
   
   return photos.length
     ? photos.map(({ id, name, file }) => (

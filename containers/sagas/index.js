@@ -11,8 +11,9 @@ function* getPhotos() {
     );
     const data = yield response.data;
     console.log(data)
-    const thumbs = yield data.map(({ urls, user }) => ({
+    const thumbs = yield data.map(({ id, urls, user }) => ({
       id: uniqueId(),
+      serverId: id,
       name: user.name,
       file: urls.thumb,
     }));

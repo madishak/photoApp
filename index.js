@@ -6,7 +6,7 @@ import createSagaMidleware from "redux-saga";
 import { Router, Switch, Route } from "react-router-dom";
 import rootSaga from "./containers/sagas/index";
 import "roboto-fontface/css/roboto/roboto-fontface.css";
-import photos from "./containers/reducers/index.js";
+import reducer from "./containers/reducers/index.js";
 import App from "./components/App";
 import PhotoCardPreview from './components/PhotoCardPreview';
 import { createBrowserHistory } from "history";
@@ -19,7 +19,7 @@ const devtoolMiddleware = ext && ext();
 const sagaMidleware = createSagaMidleware();
 const middleware = applyMiddleware(sagaMidleware);
 
-const store = createStore(photos, compose(middleware, devtoolMiddleware));
+const store = createStore(reducer, compose(middleware, devtoolMiddleware));
 sagaMidleware.run(rootSaga);
 
 const history = createBrowserHistory();

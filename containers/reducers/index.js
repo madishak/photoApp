@@ -1,11 +1,20 @@
 import { combineReducers } from "redux";
-import { ADD_PHOTOS, REMOVE_PHOTO, PHOTOS_FETCH_SUCCESS, PHOTOS_FETCH_FAILURE } from '../constants';
+import { GET_PHOTO_ID, ADD_PHOTOS, REMOVE_PHOTO, PHOTOS_FETCH_SUCCESS, PHOTOS_FETCH_FAILURE } from '../constants';
+
+const currentId = (state = '', action) => {
+  switch (action.type) {
+    case GET_PHOTO_ID:
+      const { id } = action;     
+      return id;
+    default:
+      return state;
+  }
+};
 
 const photos = (state = [], action) => {
   switch (action.type) {
     case ADD_PHOTOS: {
       const { photos } = action;
-      // console.log(photos);
       return [...photos, ...state];
     }
     case REMOVE_PHOTO: {
@@ -25,4 +34,4 @@ const photos = (state = [], action) => {
   }
 };
 
-export default combineReducers({ photos });
+export default combineReducers({ currentId, photos });
