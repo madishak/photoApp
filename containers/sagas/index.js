@@ -11,11 +11,11 @@ function* getPhotos() {
     );
     const data = yield response.data;
     console.log(data)
-    const thumbs = yield data.map(({ id, urls, user }) => ({
+    const thumbs = yield data.map(({ urls, user, alt_description }) => ({
       id: uniqueId(),
-      serverId: id,
       name: user.name,
       file: urls.thumb,
+      description: alt_description,
     }));
     yield put({ type: PHOTOS_FETCH_SUCCESS, photos: thumbs });
   } catch (error) {
