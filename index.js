@@ -28,12 +28,7 @@ console.log("Store", store.getState());
 render(
   <Provider store={store}>
     <Router history={history}>
-      <App />
-      {/* <Switch> */}
-        {/* <Route exact path="/" component={App} />
-        <Route exact path="/about" component={PhotoCardPreview } /> */}
-      {/* </Switch> */}
-    
+      <App />    
     </Router>
   </Provider>,
   document.getElementById("app")

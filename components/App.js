@@ -16,13 +16,13 @@ import PhotoCardPreview from './PhotoCardPreview';
 // }));
 
 const App = () => {
- 
-    return (
-      <Switch>
-     <Route exact path="/" component={Home} />
-        <Route path="/:id" render={(props) => <PhotoCardPreview {...props} />} />
+
+  return (
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/:id" component={PhotoCardPreview} />
     </Switch>
-    );
+  );
   // }
 }
 

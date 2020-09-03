@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 // import clsx from 'clsx';
 import Card from "@material-ui/core/Card";
@@ -15,12 +16,12 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
     marginTop: 25,
-    cursor: "pointer",
   },
   media: {
     height: 0,
     width: "auto",
     paddingTop: "56.25%", // 16:9
+    cursor: "pointer",
   },
   expand: {
     transform: "rotate(0deg)",
@@ -44,7 +45,7 @@ const mapStateToProps = (state) => {
 };
 
 const PhotoCard = (props) => {
-  const { history } = props;
+  const history = useHistory();
   console.log(history);
   const classes = useStyles();
   const { photos } = props;
@@ -54,11 +55,13 @@ const PhotoCard = (props) => {
     const { dispatch } = props;
     dispatch(removePhoto(id));
   };
+
+  const handlePage = (id) => () => history.push(`/${id}`)
   
   return photos.length
     ? photos.map(({ id, name, file }) => (
         <Grid item xs={10} sm={4} key={id}>
-          <Card className={classes.root} onClick={() => history.push(`/${id}`)}>
+          <Card className={classes.root}>
             <CardHeader
               action={
                 <IconButton
@@ -70,7 +73,7 @@ const PhotoCard = (props) => {
               }
               title={name}
             />
-            <CardMedia className={classes.media} image={file} title="pic" />
+            <CardMedia className={classes.media} image={file} title="pic" onClick={handlePage(id)}/>
           </Card>
         </Grid>
       ))
