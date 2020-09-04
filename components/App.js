@@ -8,7 +8,7 @@ import { Switch, Route } from "react-router-dom";
 // import PhotoCard from "./PhotoCard";
 // import PhotosLoaderButton from "./PhotosLoaderButton";
 import Home from "./Home";
-import PhotoCardPreview from './PhotoCardPreview';
+import PhotoCardView from './PhotoCardView';
 // const useStyles = makeStyles(() => ({
 //   photoCardsWrapper: {
 //     margin: '0 auto',
@@ -20,7 +20,7 @@ const App = () => {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/:id" component={PhotoCardPreview} />
+      <Route exact path="/:id" component={PhotoCardView} />
     </Switch>
   );
   // }

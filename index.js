@@ -8,7 +8,6 @@ import rootSaga from "./containers/sagas/index";
 import "roboto-fontface/css/roboto/roboto-fontface.css";
 import reducer from "./containers/reducers/index.js";
 import App from "./components/App";
-import PhotoCardPreview from './components/PhotoCardPreview';
 import { createBrowserHistory } from "history";
 
 import "./style.css";
