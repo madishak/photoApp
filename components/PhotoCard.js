@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
-// import clsx from 'clsx';
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -20,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   media: {
     height: 0,
     width: "auto",
-    paddingTop: "56.25%", // 16:9
+    paddingTop: "56.25%",
     cursor: "pointer",
   },
   expand: {

@@ -9,6 +9,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     margin: 20,
   },
+  input: {
+    color: "transparent",
+  }
 }));
 
 const mapStateToProps = (state) => {
@@ -28,7 +31,7 @@ const Form = (props) => {
 
     const files = Object.values(fileInput.current.files).map((file) => ({
       id: uniqueId(),
-      name: file.name.slice(0,10).split(".")[0],
+      name: file.name.slice(0, 10).split(".")[0],
       file: URL.createObjectURL(file),
     }));
     console.log("files", files);
@@ -38,9 +41,10 @@ const Form = (props) => {
   return (
     <div>
       <form className={classes.root} onSubmit={handleSubmit}>
+        
         <input
           accept="image/*"
-          className="form__input"
+          className={classes.input}
           type="file"
           multiple
           ref={fileInput}
