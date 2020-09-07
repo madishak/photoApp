@@ -1,11 +1,10 @@
 import { combineReducers } from "redux";
-import { GET_PHOTO_ID, ADD_PHOTOS, REMOVE_PHOTO, PHOTOS_FETCH_SUCCESS, PHOTOS_FETCH_FAILURE } from '../constants';
+import { GET_PHOTO_ID, ADD_PHOTOS, REMOVE_PHOTO, PHOTOS_FETCH_SUCCESS, PHOTOS_FETCH_FAILURE } from './constants';
 
 const currentId = (state = '', action) => {
   switch (action.type) {
-    case GET_PHOTO_ID:
-      const { id } = action;     
-      return id;
+    case GET_PHOTO_ID: 
+      return action.id;
     default:
       return state;
   }

@@ -6,7 +6,7 @@ import createSagaMidleware from "redux-saga";
 import { Router } from "react-router-dom";
 import rootSaga from "./containers/PhotosLoaderButton/sagas";
 import "roboto-fontface/css/roboto/roboto-fontface.css";
-import reducer from "./containers/reducers/index.js";
+import reducer from "./containers/reducers";
 import App from "./containers/App/App";
 import { createBrowserHistory } from "history";
 
