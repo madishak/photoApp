@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
-import Header from './Header';
+import Header from '../../components/Header';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
 import { Button } from '@material-ui/core';
@@ -39,7 +39,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-const PhotoCardPreview = (props) => {
+const PhotoCardView = (props) => {
   const classes = useStyles();
   const history = useHistory();
   const { photo } = props;
@@ -60,4 +60,4 @@ const PhotoCardPreview = (props) => {
     </div>);
 };
 
-export default connect(mapStateToProps)(PhotoCardPreview);
+export default connect(mapStateToProps)(PhotoCardView);

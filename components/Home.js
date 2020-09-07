@@ -4,9 +4,9 @@ import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from '@material-ui/core';
 import Header from "./Header";
-import Form from "./Form";
-import PhotoCard from "./PhotoCard";
-import PhotosLoaderButton from "./PhotosLoaderButton";
+import Form from "../containers/Form/Form";
+import PhotoCard from "../containers/PhotoCard/PhotoCard";
+import PhotosLoaderButton from "../containers/PhotosLoaderButton/PhotosLoaderButton";
 
 const useStyles = makeStyles({
   photoCardsWrapper: {

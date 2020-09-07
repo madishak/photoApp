@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Home from "./Home";
-import PhotoCardView from './PhotoCardView';
+import Home from "../../components/Home";
+import PhotoCardView from '../PhotoCardView/PhotoCardView';
 
 const App = () => {
 

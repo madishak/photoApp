@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { connect } from "react-redux";
 import { uniqueId } from "lodash";
 import { makeStyles } from "@material-ui/core/styles";
-import { addPhotos } from "../containers/actions/index";
+import { addPhotos } from "./actions";
 import { Button } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({

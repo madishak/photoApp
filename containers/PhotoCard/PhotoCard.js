@@ -9,7 +9,7 @@ import IconButton from "@material-ui/core/IconButton";
 import { red } from "@material-ui/core/colors";
 import { Grid } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
-import { getPhotoId, removePhoto } from "../containers/actions/index";
+import { getPhotoId, removePhoto } from "./actions";
 
 const useStyles = makeStyles((theme) => ({
   root: {
