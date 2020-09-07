@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
 import createSagaMidleware from "redux-saga";
-import { Router, Switch, Route } from "react-router-dom";
+import { Router } from "react-router-dom";
 import rootSaga from "./containers/sagas/index";
 import "roboto-fontface/css/roboto/roboto-fontface.css";
 import reducer from "./containers/reducers/index.js";
@@ -23,7 +23,6 @@ sagaMidleware.run(rootSaga);
 
 const history = createBrowserHistory();
 
-console.log("Store", store.getState());
 render(
   <Provider store={store}>
     <Router history={history}>

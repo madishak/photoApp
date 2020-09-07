@@ -9,13 +9,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     margin: 20,
   },
-  input: {
-    color: "transparent",
-  }
 }));
 
 const mapStateToProps = (state) => {
-  console.log("State", state.photos);
   return {
     photos: state.photos,
   };
@@ -34,7 +30,6 @@ const Form = (props) => {
       name: file.name.slice(0, 10).split(".")[0],
       file: URL.createObjectURL(file),
     }));
-    console.log("files", files);
     dispatch(addPhotos(files));
   };
 

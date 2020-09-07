@@ -54,7 +54,6 @@ const PhotoCard = (props) => {
   };
 
   const handlePage = (id) => () => {
-    console.log('card', typeof id)
     const { dispatch } = props;
     dispatch(getPhotoId(id));
     history.push(`/${id}`)

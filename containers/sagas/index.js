@@ -10,7 +10,6 @@ function* getPhotos() {
       `https://api.unsplash.com/photos/random/?client_id=I-2oQQW0voU3M5j5jPUt_O8edXadaHayvzKSz1ZiPxE&&count=5&&query=city`
     );
     const data = yield response.data;
-    console.log(data)
     const thumbs = yield data.map(({ urls, user, alt_description }) => ({
       id: uniqueId(),
       name: user.name,
